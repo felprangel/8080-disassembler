@@ -1,6 +1,41 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <stdint.h>
+#include <stdbool.h>
 
-int main() {}
+#include <stdio.h>
+#include <stdlib.h>
+
+int disassemble8080Opcode(unsigned char *codebuffer, int pc);
+
+int main(int argc, char **argv) {
+    if (argc < 2) {
+        fprintf(stderr, "Erro: Nome da ROM é obrigatório.\n");
+        return 1;
+    }
+
+    FILE *file = fopen(argv[1], "rb");
+    if (file == NULL) {
+        fprintf(stderr, "Erro: Não foi possível abrir a ROM.\n");
+        return 1;
+    }
+
+    fseek(file, 0, SEEK_END);
+    long fsize = ftell(file);
+    fseek(file, 0, SEEK_SET);
+
+    unsigned char *buffer = malloc(fsize);
+    fread(buffer, 1, fsize, file);
+    fclose(file);
+
+    int pc = 0;
+    while (pc < fsize) {
+        pc += disassemble8080Opcode(buffer, pc);
+    }
+
+    free(buffer);
+    return 0;
+}
 
 /*
 *codebuffer is a valid pointer to 8080 assembly code
