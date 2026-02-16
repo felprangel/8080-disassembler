@@ -173,6 +173,61 @@ int disassemble8080Opcode(unsigned char *codebuffer, int pc)
             opbytes = 2;
             break;
 
+        case 0x1F:
+            printf("RAR");
+            break;
+
+        case 0x20:
+            printf("NOP (Invalid Opcode)");
+            break;
+
+        case 0x21:
+            printf("LXI    H,#$%02x%02x", code[2], code [1]);
+            opbytes = 3;
+            break;
+
+        case 0x22:
+            printf("SHLD   $%02x%02x", code[2], code[1]);
+            opbytes = 3;
+            break;
+
+        case 0x23:
+            printf("INX    H");
+            break;
+
+        case 0x24:
+            printf("INR    H");
+            break;
+
+        case 0x25:
+            printf("DCR    H");
+            break;
+
+        case 0x26:
+            printf("MVI    H,#$%02x", code[1]);
+            break;
+
+        case 0x27:
+            printf("DAA");
+            break;
+
+        case 0x28:
+            printf("NOP (Invalid Opcode)");
+            break;
+
+        case 0x29:
+            printf("DAD    H");
+            break;
+
+        case 0x2A:
+            printf("LHLD   $%02x%02x", code[2], code[1]);
+            opbytes = 3;
+            break;
+
+        case 0x2B:
+            printf("DCX    H");
+            break;
+
         /* ........ */
         case 0x3e:
             printf("MVI    A,#0x%02x", code[1]);
