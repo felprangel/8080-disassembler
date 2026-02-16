@@ -37,13 +37,6 @@ int main(int argc, char **argv) {
     return 0;
 }
 
-/*
-*codebuffer is a valid pointer to 8080 assembly code
-pc is the current offset into the code
-
-returns the number of bytes of the op
-*/
-
 int disassemble8080Opcode(unsigned char *codebuffer, int pc)
 {
     unsigned char *code = &codebuffer[pc];
