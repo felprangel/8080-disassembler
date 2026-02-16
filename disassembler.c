@@ -78,7 +78,99 @@ int disassemble8080Opcode(unsigned char *codebuffer, int pc)
             break;
 
         case 0x08:
-            printf("NOP");
+            printf("NOP (Invalid Opcode)");
+            break;
+
+        case 0x09:
+            printf("DAD    B");
+            break;
+
+        case 0x0A:
+            printf("LDAX   B");
+            break;
+
+        case 0x0B:
+            printf("DCX    B");
+            break;
+
+        case 0x0C:
+            printf("INR    C");
+            break;
+
+        case 0x0D:
+            printf("DCR    C");
+            break;
+
+        case 0x0E:
+            printf("MVI    C,#$%02x", code[1]);
+            opbytes = 2;
+            break;
+
+        case 0x0F:
+            printf("RRC");
+            break;
+
+        case 0x10:
+            printf("NOP (Invalid Opcode)");
+            break;
+
+        case 0x11:
+            printf("LXI    D,#$%02x%02x", code[2], code[1]);
+            opbytes = 3;
+            break;
+
+        case 0x12:
+            printf("STAX   D");
+            break;
+
+        case 0x13:
+            printf("INX    D");
+            break;
+
+        case 0x14:
+            printf("INR    D");
+            break;
+
+        case 0x15:
+            printf("DCR    D");
+            break;
+
+        case 0x16:
+            printf("MVI    D,#$%02x", code[1]);
+            opbytes = 2;
+            break;
+
+        case 0x17:
+            printf("RAL");
+            break;
+
+        case 0x18:
+            printf("NOP (Invalid Opcode)");
+            break;
+
+        case 0x19:
+            printf("DAD    D");
+            break;
+
+        case 0x1A:
+            printf("LDAX   D");
+            break;
+
+        case 0x1B:
+            printf("DCX    D");
+            break;
+
+        case 0x1C:
+            printf("INR    E");
+            break;
+
+        case 0x1D:
+            printf("DCR    E");
+            break;
+
+        case 0x1E:
+            printf("MVI    E,#$%02x", code[1]);
+            opbytes = 2;
             break;
 
         /* ........ */
