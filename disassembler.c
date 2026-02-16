@@ -49,7 +49,7 @@ int disassemble8080Opcode(unsigned char *codebuffer, int pc)
 
         case 0x01:
             printf("LXI    B,#$%02x%02x", code[2], code[1]);
-            opbytes=3;
+            opbytes = 3;
             break;
 
         case 0x02:
@@ -70,7 +70,7 @@ int disassemble8080Opcode(unsigned char *codebuffer, int pc)
 
         case 0x06:
             printf("MVI    B,#$%02x", code[1]);
-            opbytes=2;
+            opbytes = 2;
             break;
 
         case 0x07:
