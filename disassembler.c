@@ -228,6 +228,14 @@ int disassemble8080Opcode(unsigned char *codebuffer, int pc)
             printf("DCX    H");
             break;
 
+        case 0x2C:
+            printf("INR    L");
+            break;
+
+        case 0x2D:
+            printf("DCR    L");
+            break;
+
         /* ........ */
         case 0x3e:
             printf("MVI    A,#0x%02x", code[1]);
