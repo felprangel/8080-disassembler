@@ -236,10 +236,81 @@ int disassemble8080Opcode(unsigned char *codebuffer, int pc)
             printf("DCR    L");
             break;
 
-        /* ........ */
-        case 0x3e:
-            printf("MVI    A,#0x%02x", code[1]);
+        case 0x2E:
+            printf("MVI    L,$%02x", code[1]);
             opbytes = 2;
+            break;
+
+        case 0x2F:
+            printf("CMA");
+            break;
+
+        case 0x30:
+            printf("NOP (Invalid opcode)");
+            break;
+
+        case 0x31:
+            printf("LXI    SP, $%02x%02x", code[2], code[1]);
+            opbytes = 3;
+            break;
+
+        case 0x32:
+            printf("STA    $%02x%02x", code[2], code[1]);
+            opbytes = 3;
+            break;
+
+        case 0x33:
+            printf("INX    SP");
+            break;
+
+        case 0x34:
+            printf("INR    M");
+            break;
+
+        case 0x35:
+            printf("DCR    M");
+            break;
+
+        case 0x36:
+            printf("MVI    M,$%02x", code[1]);
+            break;
+
+        case 0x37:
+            printf("STC");
+            break;
+
+        case 0x38:
+            printf("NOP (Invalid Opcode)");
+            break;
+
+        case 0x39:
+            printf("DAD    SP");
+            break;
+
+        case 0x3A:
+            printf("LDA    A,$%02x%02x", code[2], code[1]);
+            opbytes = 3;
+            break;
+
+        case 0x3B:
+            printf("DCX    SP");
+            break;
+
+        case 0x3C:
+            printf("INR    A");
+            break;
+
+        case 0x3D:
+            printf("DCR    A");
+            break;
+
+        case 0x3E:
+            printf("MVI    A,$%02x", code[1]);
+            opbytes = 2;
+            break;
+
+        case 0x3F:
+            printf("CMC");
             break;
 
         /* ........ */
