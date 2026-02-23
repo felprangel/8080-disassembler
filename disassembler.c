@@ -641,9 +641,205 @@ int disassemble8080Opcode(unsigned char *codebuffer, int pc)
             printf("SUB    C");
             break;
 
-        /* ........ */
-        case 0xc3:
-            printf("JMP    $%02x%02x",code[2],code[1]);
+        case 0x92:
+            printf("SUB    D");
+            break;
+
+        case 0x93:
+            printf("SUB    E");
+            break;
+
+        case 0x94:
+            printf("SUB    H");
+            break;
+
+        case 0x95:
+            printf("SUB    L");
+            break;
+
+        case 0x96:
+            printf("SUB    M");
+            break;
+
+        case 0x97:
+            printf("SUB    A");
+            break;
+
+        case 0x98:
+            printf("SBB    B");
+            break;
+
+        case 0x99:
+            printf("SBB    C");
+            break;
+
+        case 0x9A:
+            printf("SBB    D");
+            break;
+
+        case 0x9B:
+            printf("SBB    E");
+            break;
+
+        case 0x9C:
+            printf("SBB    H");
+            break;
+
+        case 0x9D:
+            printf("SBB    L");
+            break;
+
+        case 0x9E:
+            printf("SBB    M");
+            break;
+
+        case 0x9F:
+            printf("SBB    A");
+            break;
+
+        case 0xA0:
+            printf("ANA    B");
+            break;
+
+        case 0xA1:
+            printf("ANA    C");
+            break;
+
+        case 0xA2:
+            printf("ANA    D");
+            break;
+
+        case 0xA3:
+            printf("ANA    E");
+            break;
+
+        case 0xA4:
+            printf("ANA    H");
+            break;
+
+        case 0xA5:
+            printf("ANA    L");
+            break;
+
+        case 0xA6:
+            printf("ANA    M");
+            break;
+
+        case 0xA7:
+            printf("ANA    A");
+            break;
+
+        case 0xA8:
+            printf("XRA    B");
+            break;
+
+        case 0xA9:
+            printf("XRA    C");
+            break;
+
+        case 0xAA:
+            printf("XRA    D");
+            break;
+
+        case 0xAB:
+            printf("XRA    E");
+            break;
+
+        case 0xAC:
+            printf("XRA    H");
+            break;
+
+        case 0xAD:
+            printf("XRA    L");
+            break;
+
+        case 0xAE:
+            printf("XRA    M");
+            break;
+
+        case 0xAF:
+            printf("XRA    A");
+            break;
+
+        case 0xB0:
+            printf("ORA    B");
+            break;
+
+        case 0xB1:
+            printf("ORA    C");
+            break;
+
+        case 0xB2:
+            printf("ORA    D");
+            break;
+
+        case 0xB3:
+            printf("ORA    E");
+            break;
+
+        case 0xB4:
+            printf("ORA    H");
+            break;
+
+        case 0xB5:
+            printf("ORA    L");
+            break;
+
+        case 0xB6:
+            printf("ORA    M");
+            break;
+
+        case 0xB7:
+            printf("ORA    A");
+            break;
+
+        case 0xB8:
+            printf("CMP    B");
+            break;
+
+        case 0xB9:
+            printf("CMP    C");
+            break;
+
+        case 0xBA:
+            printf("CMP    D");
+            break;
+
+        case 0xBB:
+            printf("CMP    E");
+            break;
+
+        case 0xBC:
+            printf("CMP    H");
+            break;
+
+        case 0xBD:
+            printf("CMP    L");
+            break;
+
+        case 0xBE:
+            printf("CMP    M");
+            break;
+
+        case 0xBF:
+            printf("CMP    A");
+            break;
+
+        case 0xC0:
+            printf("RNZ");
+            break;
+
+        case 0xC1:
+            printf("POP    B");
+            break;
+
+        case 0xC2:
+            printf("JNZ    $%02x%02x", code[2], code[1]);
+            opbytes = 3;
+            break;
+
+        case 0xC3:
+            printf("JMP    $%02x%02x", code[2], code[1]);
             opbytes = 3;
             break;
 
