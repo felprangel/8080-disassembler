@@ -843,7 +843,133 @@ int disassemble8080Opcode(unsigned char *codebuffer, int pc)
             opbytes = 3;
             break;
 
-        /* ........ */
+        case 0xC4:
+            printf("CNZ    $%02x%02x", code[2], code[1]);
+            opbytes = 3;
+            break;
+
+        case 0xC5:
+            printf("PUSH   B");
+            break;
+
+        case 0xC6:
+            printf("ADI    $%02x", code[1]);
+            opbytes = 2;
+            break;
+
+        case 0xC7:
+            printf("ADI    $%02x", code[1]);
+            opbytes = 2;
+            break;
+
+        case 0xC8:
+            printf("RZ");
+            break;
+
+        case 0xC9:
+            printf("RET");
+            break;
+
+        case 0xCA:
+            printf("JZ     $%02x%02x", code[2], code[1]);
+            opbytes = 3;
+            break;
+
+        case 0xCB:
+            printf("NOP (Invalid opcode)");
+            break;
+
+        case 0xCC:
+            printf("CZ     $%02x%02x", code[2], code[1]);
+            opbytes = 3;
+            break;
+
+        case 0xCD:
+            printf("CALL   $%02x%02x", code[2], code[1]);
+            opbytes = 3;
+            break;
+
+        case 0xCE:
+            printf("ACI    $%02x", code[1]);
+            opbytes = 2;
+            break;
+
+        case 0xCF:
+            printf("RST    1");
+            break;
+
+        case 0xD0:
+            printf("RNC");
+            break;
+
+        case 0xD1:
+            printf("POP    D");
+            break;
+
+        case 0xD2:
+            printf("JNC    $%02x%02x", code[2], code[1]);
+            opbytes = 3;
+            break;
+
+        case 0xD3:
+            printf("OUT    $%02x", code[1]);
+            opbytes = 2;
+            break;
+
+        case 0xD4:
+            printf("CNC    $%02x%02x", code[2], code[1]);
+            opbytes = 3;
+            break;
+
+        case 0xD5:
+            printf("PUSH   D");
+            break;
+
+        case 0xD6:
+            printf("SUI    $%02x", code[1]);
+            opbytes = 2;
+            break;
+
+        case 0xD7:
+            printf("RST    2");
+            break;
+
+        case 0xD8:
+            printf("RC");
+            break;
+
+        case 0xD9:
+            printf("NOP (Invalid Opcode)");
+            break;
+
+        case 0xDA:
+            printf("JC     $%02x%02x", code[2], code[1]);
+            opbytes = 3;
+            break;
+
+        case 0xDB:
+            printf("IN     $%02x", code[1]);
+            opbytes = 2;
+            break;
+
+        case 0xDC:
+            printf("CC     $%02x%02x", code[2], code[1]);
+            opbytes = 3;
+            break;
+
+        case 0xDD:
+            printf("NOP (Invalid Opcode)");
+            break;
+
+        case 0xDE:
+            printf("SBI    $%02x", code[1]);
+            opbytes = 2;
+            break;
+
+        case 0xDF:
+            printf("RST    3");
+            break;
+
     }
 
     printf("\n");
