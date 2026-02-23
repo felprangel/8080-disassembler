@@ -205,6 +205,7 @@ int disassemble8080Opcode(unsigned char *codebuffer, int pc)
 
         case 0x26:
             printf("MVI    H,#$%02x", code[1]);
+            opbytes = 2;
             break;
 
         case 0x27:
@@ -237,7 +238,7 @@ int disassemble8080Opcode(unsigned char *codebuffer, int pc)
             break;
 
         case 0x2E:
-            printf("MVI    L,$%02x", code[1]);
+            printf("MVI    L,#$%02x", code[1]);
             opbytes = 2;
             break;
 
@@ -246,11 +247,11 @@ int disassemble8080Opcode(unsigned char *codebuffer, int pc)
             break;
 
         case 0x30:
-            printf("NOP (Invalid opcode)");
+            printf("NOP (Invalid Opcode)");
             break;
 
         case 0x31:
-            printf("LXI    SP, $%02x%02x", code[2], code[1]);
+            printf("LXI    SP,#$%02x%02x", code[2], code[1]);
             opbytes = 3;
             break;
 
@@ -273,6 +274,7 @@ int disassemble8080Opcode(unsigned char *codebuffer, int pc)
 
         case 0x36:
             printf("MVI    M,$%02x", code[1]);
+            opbytes = 2;
             break;
 
         case 0x37:
@@ -305,7 +307,7 @@ int disassemble8080Opcode(unsigned char *codebuffer, int pc)
             break;
 
         case 0x3E:
-            printf("MVI    A,$%02x", code[1]);
+            printf("MVI    A,#$%02x", code[1]);
             opbytes = 2;
             break;
 
@@ -853,13 +855,12 @@ int disassemble8080Opcode(unsigned char *codebuffer, int pc)
             break;
 
         case 0xC6:
-            printf("ADI    $%02x", code[1]);
+            printf("ADI    #$%02x", code[1]);
             opbytes = 2;
             break;
 
         case 0xC7:
-            printf("ADI    $%02x", code[1]);
-            opbytes = 2;
+            printf("RST    0");
             break;
 
         case 0xC8:
@@ -876,7 +877,7 @@ int disassemble8080Opcode(unsigned char *codebuffer, int pc)
             break;
 
         case 0xCB:
-            printf("NOP (Invalid opcode)");
+            printf("NOP (Invalid Opcode)");
             break;
 
         case 0xCC:
@@ -890,7 +891,7 @@ int disassemble8080Opcode(unsigned char *codebuffer, int pc)
             break;
 
         case 0xCE:
-            printf("ACI    $%02x", code[1]);
+            printf("ACI    #$%02x", code[1]);
             opbytes = 2;
             break;
 
@@ -912,7 +913,7 @@ int disassemble8080Opcode(unsigned char *codebuffer, int pc)
             break;
 
         case 0xD3:
-            printf("OUT    $%02x", code[1]);
+            printf("OUT    #$%02x", code[1]);
             opbytes = 2;
             break;
 
@@ -926,7 +927,7 @@ int disassemble8080Opcode(unsigned char *codebuffer, int pc)
             break;
 
         case 0xD6:
-            printf("SUI    $%02x", code[1]);
+            printf("SUI    #$%02x", code[1]);
             opbytes = 2;
             break;
 
@@ -948,7 +949,7 @@ int disassemble8080Opcode(unsigned char *codebuffer, int pc)
             break;
 
         case 0xDB:
-            printf("IN     $%02x", code[1]);
+            printf("IN     #$%02x", code[1]);
             opbytes = 2;
             break;
 
@@ -962,7 +963,7 @@ int disassemble8080Opcode(unsigned char *codebuffer, int pc)
             break;
 
         case 0xDE:
-            printf("SBI    $%02x", code[1]);
+            printf("SBI    #$%02x", code[1]);
             opbytes = 2;
             break;
 
