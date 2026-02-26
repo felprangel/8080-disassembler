@@ -971,6 +971,145 @@ int disassemble8080Opcode(unsigned char *codebuffer, int pc)
             printf("RST    3");
             break;
 
+        case 0xE0:
+            printf("RPO");
+            break;
+
+        case 0xE1:
+            printf("POP    H");
+            break;
+
+        case 0xE2:
+            printf("JPO    $%02x%02x", code[2], code[1]);
+            opbytes = 3;
+            break;
+
+        case 0xE3:
+            printf("XTHL");
+            break;
+
+        case 0xE4:
+            printf("CPO    $%02x%02x", code[2], code[1]);
+            opbytes = 3;
+            break;
+
+        case 0xE5:
+            printf("PUSH   H");
+            break;
+
+        case 0xE6:
+            printf("ANI    $%02x", code[1]);
+            opbytes = 2;
+            break;
+
+        case 0xE7:
+            printf("RST    4");
+            break;
+
+        case 0xE8:
+            printf("RPE");
+            break;
+
+        case 0xE9:
+            printf("PCHL");
+            break;
+
+        case 0xEA:
+            printf("JPE    $%02x%02x", code[2], code[1]);
+            opbytes = 3;
+            break;
+
+        case 0xEB:
+            printf("XCHG");
+            break;
+
+        case 0xEC:
+            printf("CPE    $%02x%02x", code[2], code[1]);
+            opbytes = 3;
+            break;
+
+        case 0xED:
+            printf("NOP (Invalid Opcode)");
+            break;
+
+        case 0xEE:
+            printf("XRI    $%02x", code[1]);
+            opbytes = 2;
+            break;
+
+        case 0xEF:
+            printf("RST    5");
+            break;
+
+        case 0xF0:
+            printf("RP");
+            break;
+
+        case 0xF1:
+            printf("POP    PSW");
+            break;
+
+        case 0xF2:
+            printf("JP    $%02x%02x", code[2],code[1]);
+            opbytes = 3;
+            break;
+
+        case 0xF3:
+            printf("DI");
+            break;
+
+        case 0xF4:
+            printf("CP    $%02x%02x", code[2],code[1]);
+            opbytes = 3;
+            break;
+
+        case 0xF5:
+            printf("PUSH   PSW");
+            break;
+
+        case 0xF6:
+            printf("ORI    $%02x", code[1]);
+            opbytes = 2;
+            break;
+
+        case 0xF7:
+            printf("RST    6");
+            break;
+
+        case 0xF8:
+            printf("RM");
+            break;
+
+        case 0xF9:
+            printf("SPHL");
+            break;
+
+        case 0xFA:
+            printf("JM     $%02x%02x", code[2], code[1]);
+            opbytes = 3;
+            break;
+
+        case 0xFB:
+            printf("EI");
+            break;
+
+        case 0xFC:
+            printf("CM     $%02x", code[1]);
+            opbytes = 2;
+            break;
+
+        case 0xFD:
+            printf("NOP (Invalid Opcode)");
+            break;
+
+        case 0xFE:
+            printf("CPI    $%02x", code[1]);
+            opbytes = 2;
+            break;
+
+        case 0xFF:
+            printf("RST    7");
+            break;
     }
 
     printf("\n");
